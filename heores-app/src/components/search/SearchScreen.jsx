@@ -54,9 +54,11 @@ export const SearchScreen = () => {
           {q === '' ? (
             <div className='alert alert-info'>Buscar un heroe uwu</div>
           ) : (
-            <div className='alert alert-danger'>
-              No hay resultados de: {q} :(
-            </div>
+            (herosFilter.length === 0) && (
+              <div className='alert alert-danger'>
+                No hay resultados de: {q} :(
+              </div>
+            )
           )}
           {herosFilter.map(h => (
             <HeroCard key={h.id} {...h} />

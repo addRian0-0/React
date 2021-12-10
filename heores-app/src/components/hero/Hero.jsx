@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 import { useParams, Navigate, useNavigate } from 'react-router-dom'
 import { getHeroByID } from '../../helpers/getHeroById'
 
+const heroImages = require.context('../../assets', true);
+
 export const Hero = () => {
   const { heroId } = useParams()
   const navigate = useNavigate()
@@ -24,7 +26,7 @@ export const Hero = () => {
       <div className='col-4'>
         <img
           className='img-thumbnail animate__animated animate__fadeInDown '
-          src={imagesPath}
+          src={heroImages(`./${heroId}.jpg`).default}
           alt={hero.superhero}
         />
       </div>

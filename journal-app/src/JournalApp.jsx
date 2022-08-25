@@ -1,9 +1,14 @@
 import React from 'react'
+import { Router } from 'react-router-dom'
+import AppRouter from './router/AppRouter'
+import AppTheme from './theme/AppTheme'
 
-export const JournalApp = () => {
-    return (
-        <div>
-            <h1>Journal App</h1>
-        </div>
-    )
+export default function JournalApp () {
+  return (
+    <>
+      <AppTheme>
+        <AppRouter />
+      </AppTheme>
+    </>
+  )
 }
